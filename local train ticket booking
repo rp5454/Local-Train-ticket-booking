@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+struct ticket{
+    int sno,dno,dif,fare,dur;
+    char jtype[10];}
+int firststep(int a);
+int firststep(int a){
+    int b;
+    printf("enter 1 for LOGIN");
+    printf("\nenter 2 for SIGNUP");
+    scanf("%d",&b);
+    return b;
+}
+void signup(char *n[20],int *a,char *uid[10],int *pcode,char *gen[10]){
+printf("\nenter name ");
+scanf("%s",*n);
+printf("\nenter age ");
+scanf("%d",a);
+printf("\nenter username");
+scanf("%s",*uid);
+printf("\nenter passcode ");
+scanf("%d",pcode);
+printf("enter gender");
+scanf("%s",*gen);
+}
+int login(char n[10],char u[10],int p);
+int login(char n[10],char u[10],int p){
+    char name[20],uid[10];
+    int pcode;
+    printf("\nenter your name ");
+    scanf("%s",name);
+    printf("\nenter username ");
+    scanf("%s",uid);
+    printf("\nenter passcode");
+    scanf("%d",&pcode);
+    return 0;
+int main(){
+FILE *ab; 
+int c,d;
+c=firststep(d);
+if (c==2){
+    char *name,*username,*gender;
+    int *age,*passcode;}
+
+struct ticket t;
+int sno,dno,dif,fare,dur;
+char jtype[10];
+printf("select type of journey(single/return)");
+scanf("%s",t.jtype);
+printf("\nenter sourcestation number from the following:\n");
+printf("1:tambaram,2:perungulathur,3:vandalur,4:urapakkam,5:guduvancheri,6:potheri,7:kattangulathur,8:maraimalai nagar,9:singaperumal koil,10:paranur,11:chengalpattu jn\n");
+scanf("%d",&t.sno);
+printf("\nenter destination number from the following:\n");
+printf("1:tambaram,2:perungulathur,3:vandalur,4:urapakkam,5:guduvancheri,6:potheri,7:kattangulathur,8:maraimalai nagar,9:singaperumal koil,10:paranur,11:chengalpattu jn\n");
+if(t.sno==t.dno){
+    printf("source station and destination cannot be same");
+}
+else{
+    dif= abs(t.sno-t.dno);
+    if (dif<=4){
+        fare=5;
+        dur=dif*7;
+        }
+    else if(dif>4&&dif<9){
+        fare=10;
+        dur=dif*8;
+    }    
+    else{
+        fare=15;
+        dur=dif*8;
+    }
+    if(jtype=="return"){
+        fare*=2;
+        dur*=2;
+    }
+    ab=fopen("github.txt","r");
+     
+      printf("                         \nTICKET                  ");    
+      printf("                      \njourneytype:%s",t.jtype); 
+      printf("                      \nfare:%d",t.fare               );
+      printf("            \njourneyduration:%d minutes",t.dur);}}
